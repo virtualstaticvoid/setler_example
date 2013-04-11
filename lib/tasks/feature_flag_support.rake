@@ -1,7 +1,7 @@
 namespace :app do
 
   desc "List feature flags"
-  task :list_feature_flags => :environment do |feature|
+  task :list_feature_flags => :environment do |task, args|
     puts "Feature flags:"
     Settings.all.each do |feature|
       puts "  #{feature.first} => #{feature.last}"
